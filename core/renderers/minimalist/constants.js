@@ -38,6 +38,95 @@ goog.require('Blockly.utils.object');
  */
 Blockly.minimalist.ConstantProvider = function() {
   Blockly.minimalist.ConstantProvider.superClass_.constructor.call(this);
+
+  /**
+   * Adjust the notch width and height here.
+   */
+  this.NOTCH_WIDTH = 15;
+  this.NOTCH_HEIGHT = 4;
+
+  /**
+   * Adjust the left corner radius here.
+   */
+  this.CORNER_RADIUS = 8;
 };
 Blockly.utils.object.inherits(Blockly.minimalist.ConstantProvider,
     Blockly.blockRendering.ConstantProvider);
+
+
+// /**
+//  * Rounded notch.
+//  * @override
+//  */
+// Blockly.minimalist.ConstantProvider.prototype.makeNotch = function() {
+//   var width = this.NOTCH_WIDTH;
+//   var height = this.NOTCH_HEIGHT;
+//   var radius = width / 1.9;
+//   function makeMainPath(dir) {
+//     return Blockly.utils.svgPaths.arc('a', '0 0 ' + (dir > 0 ? '0' : '1'), radius,
+//         Blockly.utils.svgPaths.point(dir * width / 2, height / 2)) +
+//         Blockly.utils.svgPaths.arc('a', '0 0 ' + (dir > 0 ? '0' : '1'), radius,
+//             Blockly.utils.svgPaths.point(dir * width / 2, -height / 2));
+//   }
+//   var pathLeft = makeMainPath(1);
+//   var pathRight = makeMainPath(-1);
+
+//   return {
+//     width: width,
+//     height: height,
+//     pathLeft: pathLeft,
+//     pathRight: pathRight
+//   };
+// };
+
+// /**
+//  * Triangle notch.
+//  * @override
+//  */
+// Blockly.minimalist.ConstantProvider.prototype.makeNotch = function() {
+//   var width = this.NOTCH_WIDTH;
+//   var height = this.NOTCH_HEIGHT;
+//   var outerWidth = width / 2;
+//   function makeMainPath(dir) {
+//     return Blockly.utils.svgPaths.line(
+//         [
+//           Blockly.utils.svgPaths.point(dir * outerWidth, height),
+//           Blockly.utils.svgPaths.point(dir * outerWidth, -height)
+//         ]);
+//   }
+//   var pathLeft = makeMainPath(1);
+//   var pathRight = makeMainPath(-1);
+
+//   return {
+//     width: width,
+//     height: height,
+//     pathLeft: pathLeft,
+//     pathRight: pathRight
+//   };
+// };
+
+// /**
+//  * Square notch.
+//  * @override
+//  */
+// Blockly.minimalist.ConstantProvider.prototype.makeNotch = function() {
+//   var width = this.NOTCH_WIDTH;
+//   var height = this.NOTCH_HEIGHT;
+//   function makeMainPath(dir) {
+//     return Blockly.utils.svgPaths.line(
+//         [
+//           Blockly.utils.svgPaths.point(0, height),
+//           Blockly.utils.svgPaths.point(dir * width, 0),
+//           Blockly.utils.svgPaths.point(0, -height)
+//         ]);
+//   }
+//   var pathLeft = makeMainPath(1);
+//   var pathRight = makeMainPath(-1);
+
+//   return {
+//     width: width,
+//     height: height,
+//     pathLeft: pathLeft,
+//     pathRight: pathRight
+//   };
+// };
