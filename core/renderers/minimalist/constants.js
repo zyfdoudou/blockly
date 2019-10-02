@@ -49,10 +49,19 @@ Blockly.minimalist.ConstantProvider = function() {
    * Adjust the left corner radius here.
    */
   this.CORNER_RADIUS = 8;
+
+  /**
+   * Adjust the tab width and height here.
+   */
+  this.TAB_HEIGHT = 15;
+  this.TAB_WIDTH = 8;
 };
 Blockly.utils.object.inherits(Blockly.minimalist.ConstantProvider,
     Blockly.blockRendering.ConstantProvider);
 
+/**
+ * Sample notches.
+ */
 
 // /**
 //  * Rounded notch.
@@ -128,5 +137,38 @@ Blockly.utils.object.inherits(Blockly.minimalist.ConstantProvider,
 //     height: height,
 //     pathLeft: pathLeft,
 //     pathRight: pathRight
+//   };
+// };
+
+
+/**
+ * Sample puzzle tab.
+ */
+
+// /**
+//  * Square puzzle tab.
+//  * @override
+//  */
+// Blockly.minimalist.ConstantProvider.prototype.makePuzzleTab = function() {
+//   var width = this.TAB_WIDTH;
+//   var height = this.TAB_HEIGHT;
+
+//   function makeMainPath(up) {
+//     return Blockly.utils.svgPaths.line(
+//         [
+//           Blockly.utils.svgPaths.point(-width, 0),
+//           Blockly.utils.svgPaths.point(0, -1 * up * height),
+//           Blockly.utils.svgPaths.point(width, 0)
+//         ]);
+//   }
+
+//   var pathUp = makeMainPath(1);
+//   var pathDown = makeMainPath(-1);
+
+//   return {
+//     width: width,
+//     height: height,
+//     pathDown: pathDown,
+//     pathUp: pathUp
 //   };
 // };

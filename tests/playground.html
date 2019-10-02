@@ -70,6 +70,7 @@
 // Custom requires for the playground.
 goog.require('Blockly.blockRendering.Debug');
 goog.require('Blockly.minimalist.Renderer');
+goog.require('Blockly.Themes.Material');
 goog.require('Blockly.thrasos.Renderer');
 goog.require('Blockly.zelos.Renderer');
 </script>
@@ -325,6 +326,8 @@ function changeTheme() {
     Blockly.getMainWorkspace().setTheme(Blockly.Themes.Dark);
   } else if (theme.value === "high_contrast") {
     Blockly.getMainWorkspace().setTheme(Blockly.Themes.HighContrast);
+  } else if (theme.value === "material") {
+    Blockly.getMainWorkspace().setTheme(Blockly.Themes.Material);
   } else {
     Blockly.getMainWorkspace().setTheme(Blockly.Themes.Classic);
   }
@@ -575,6 +578,7 @@ var spaghettiXml = [
     <option value="modern">Modern</option>
     <option value="dark">Dark</option>
     <option value="high_contrast">High Contrast</option>
+    <option value="material">Material</option>
   </select>
   <p>
     <input type="button" value="Export to XML" onclick="toXml()">
