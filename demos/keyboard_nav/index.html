@@ -3,11 +3,12 @@
 <head>
   <meta charset="utf-8">
   <title>Blockly Demo: Keyboard Navigation</title>
-  <script src="../../blockly_compressed.js"></script>
+  <script src="../../blockly_uncompressed.js"></script>
   <script src="../../blocks_compressed.js"></script>
   <script src="../../javascript_compressed.js"></script>
   <script src="../../msg/js/en.js"></script>
   <script src="basic_cursor.js"></script>
+  <script src="hackathon_cursor.js"></script>
   <style>
     body {
       background-color: #fff;
@@ -81,6 +82,7 @@
   <b>Default Cursor:</b> Allow the user to go to the previous, next, in or out location.<br />
   <b>Basic Cursor:</b> Using the pre order traversal allows the user to go to the next and previous location.
   </p>
+  <p id="loggingFeedback" aria-live="polite"></p>
 
   <p>
     <label for="accessibilityModeCheck">Enable Accessibility Mode:</label>
@@ -88,6 +90,7 @@
     <select id="cursorChanger" name="cursor" onchange="changeCursor(this.value)">
       <option value="default">Default Cursor</option>
       <option value="basic">Basic Cursor</option>
+      <option value="hackathon">Hackathon Cursor</option>
     </select>
 
     <button onclick="preOrderDemo()">Start Pre-order Demo</button>
@@ -99,7 +102,7 @@
   <div class="wrapper">
     <div id="blocklyDiv" style="height: 480px; width: 600px;"></div>
     <div id="keyboard_nav" style="display:none">
-      <p id="keyboard_announce" aria-live="assertive">Set key mappings below</p>
+      <!-- <p id="keyboard_announce" aria-live="assertive">Set key mappings below</p> -->
       <form id="keyboard_mappings"></form>
     </div>    
   </div>
@@ -291,6 +294,8 @@
 
       if (cursorType === "basic") {
         Blockly.getMainWorkspace().setCursor(new Blockly.BasicCursor());
+      } else if (cursorType === "hackathon") {
+        Blockly.getMainWorkspace().setCursor(new Blockly.HackathonCursor());
       } else {
         Blockly.getMainWorkspace().setCursor(new Blockly.Cursor());
       }
@@ -560,7 +565,11 @@
     }
     // End key mapping demo functions
 
-  </script>
+
+    // Hackathon Code Here!
+    // Hackathon Code Here!
+
+</script>
 
 </body>
 </html>
